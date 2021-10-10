@@ -1,0 +1,112 @@
+body {
+    font-family: sans-serif;
+    background-color: rgb(232, 232, 232);
+}
+
+.container {
+    height: 500px;
+    width: 250px;
+    background-color: rgb(237, 237, 237);
+    margin: 50px auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgb(211, 211, 211);
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+    height:40%;
+    width:100%;
+    background-color: rgb(15, 15, 15);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.label {
+    width: 100%;
+    height: 10px;
+}
+
+.display {
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    text-align: right;
+    padding: 10px;
+}
+
+.calculation {
+    width: 100%;
+    height: 40%;
+    color: rgb(204, 167, 250);
+}
+
+.result {
+    width: 100%;
+    height: 60%;
+    font-size: 2em;
+}
+
+.keypad {
+    box-sizing: border-box;
+    height:60%;
+    width:100%;
+    background-color: rgb(237, 237, 237);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.keys {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.keyRow {
+    width: 100%;
+    height: 10px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.key {
+    width: 10px;
+    height: 100%;
+    background-color: rgb(236, 236, 236);
+    flex: 1;
+    border-radius: 5px;
+    border-top: 2px solid rgb(246, 246, 246);
+    border-left: 2px solid rgb(246, 246, 246);
+    box-shadow: 2px 2px 5px rgb(225, 225, 225);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.key0 {
+    flex: 2.25;
+}
+
+.keyEquals {
+    color: white;
+    background-color: rgb(144, 65, 243);
+}
