@@ -33,45 +33,42 @@
     <div class="container">
         <div class="screen">
             <div class="label">⋮⋮⋮ Standard</div>
-            <div class="display">
-                <div class="calculation">23 x 2</div>
-                <div class="result">46</div>
-            </div>
+            <input id="calculationDisplay" type="text" value="" disabled/>
         </div>
         <div class="keypad">
-            <div class="keys">
+            <div class="keys" id="keys">
                 <div class="keyRow">
-                    <div class="key">𝘼𝘾</div>
-                    <div class="key">𝘾</div>
-                    <div class="key">𝑥<sup>2</sup></div>
-                    <div class="key">÷</div>
+                    <div class="key allClear">𝘼𝘾</div>
+                    <div class="key clear">𝘾</div>
+                    <div class="key operator" data-operator="square">𝑥<sup>2</sup></div>
+                    <div class="key operator" data-operator="divide">÷</div>
                 </div>
                 <div class="keyRow">
-                    <div class="key">𝟳</div>
-                    <div class="key">𝟴</div>
-                    <div class="key">𝟵</div>
-                    <div class="key">×</div>
+                    <div class="key numKey" data-value="7">𝟳</div>
+                    <div class="key numKey" data-value="8">𝟴</div>
+                    <div class="key numKey" data-value="9">𝟵</div>
+                    <div class="key operator" data-operator="multiply">×</div>
                 </div>
                 <div class="keyRow">
-                    <div class="key">𝟰</div>
-                    <div class="key">𝟱</div>
-                    <div class="key">𝟲</div>
-                    <div class="key">−</div>
+                    <div class="key numKey" data-value="4">𝟰</div>
+                    <div class="key numKey" data-value="5">𝟱</div>
+                    <div class="key numKey" data-value="6">𝟲</div>
+                    <div class="key operator" data-operator="subtract">−</div>
                 </div>
                 <div class="keyRow">
-                    <div class="key">𝟭</div>
-                    <div class="key">𝟮</div>
-                    <div class="key">𝟯</div>
-                    <div class="key">+</div>
+                    <div class="key numKey" data-value="1">𝟭</div>
+                    <div class="key numKey" data-value="2">𝟮</div>
+                    <div class="key numKey" data-value="3">𝟯</div>
+                    <div class="key operator" data-operator="add">+</div>
                 </div>
                 <div class="keyRow">
-                    <!-- <div class="key"></div> -->
-                    <div class="key key0">𝟬</div>
-                    <div class="key">∙</div>
-                    <div class="key keyEquals">=</div>
+                    <div class="key key0 numKey" data-value="0">𝟬</div>
+                    <div class="key decimal">.</div>
+                    <div class="key equals">=</div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>
