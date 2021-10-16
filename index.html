@@ -32,39 +32,39 @@
 <body>
     <div class="container">
         <div class="screen">
-            <div class="label">⋮⋮⋮ Standard</div>
-            <input id="calculationDisplay" type="text" value="" disabled/>
+            <div class="label">⋮⋮⋮𝒜𝓃𝒹𝓇𝓮 Standard</div>
+            <input id="display" type="text" value="" disabled/>
         </div>
         <div class="keypad">
             <div class="keys" id="keys">
                 <div class="keyRow">
-                    <div class="key allClear">𝘼𝘾</div>
-                    <div class="key clear">𝘾</div>
-                    <div class="key operator" data-operator="square">𝑥<sup>2</sup></div>
-                    <div class="key operator" data-operator="divide">÷</div>
+                    <button class="key allClear">𝘼𝘾</button>
+                    <button class="key clear" value="clear">𝘾</button>
+                    <button class="key operator" value="power">𝑥<sup>n</sup></button>
+                    <button class="key operator" value="divide">÷</button>
                 </div>
                 <div class="keyRow">
-                    <div class="key numKey" data-value="7">𝟳</div>
-                    <div class="key numKey" data-value="8">𝟴</div>
-                    <div class="key numKey" data-value="9">𝟵</div>
-                    <div class="key operator" data-operator="multiply">×</div>
+                    <button class="key numKey" value="7">𝟳</button>
+                    <button class="key numKey" value="8">𝟴</button>
+                    <button class="key numKey" value="9">𝟵</button>
+                    <button class="key operator" value="multiply">×</button>
                 </div>
                 <div class="keyRow">
-                    <div class="key numKey" data-value="4">𝟰</div>
-                    <div class="key numKey" data-value="5">𝟱</div>
-                    <div class="key numKey" data-value="6">𝟲</div>
-                    <div class="key operator" data-operator="subtract">−</div>
+                    <button class="key numKey" value="4">𝟰</button>
+                    <button class="key numKey" value="5">𝟱</button>
+                    <button class="key numKey" value="6">𝟲</button>
+                    <button class="key operator" value="subtract">−</button>
                 </div>
                 <div class="keyRow">
-                    <div class="key numKey" data-value="1">𝟭</div>
-                    <div class="key numKey" data-value="2">𝟮</div>
-                    <div class="key numKey" data-value="3">𝟯</div>
-                    <div class="key operator" data-operator="add">+</div>
+                    <button class="key numKey" value="1">𝟭</button>
+                    <button class="key numKey" value="2">𝟮</button>
+                    <button class="key numKey" value="3">𝟯</button>
+                    <button class="key operator" value="add">+</button>
                 </div>
                 <div class="keyRow">
-                    <div class="key key0 numKey" data-value="0">𝟬</div>
-                    <div class="key decimal">.</div>
-                    <div class="key equals">=</div>
+                    <button class="key numKey key0" value="0">𝟬</button>
+                    <button class="key decimal" value=".">.</button>
+                    <button class="key result" value="=">=</button>
                 </div>
             </div>
         </div>
