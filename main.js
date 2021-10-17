@@ -62,8 +62,6 @@ const populateDisplay = (input) => {
      
         calculator.displayValue = displayValue + input;
         display.value = calculator.displayValue;
-
-    console.table(calculator)
     }
 
 }
@@ -86,8 +84,6 @@ const handleOperator = (operatorSign) => {
     } 
     calculator.allowSecondOperand = true;
     calculator.operator = operatorSign;
-    console.table(calculator)
-
 }
 
 const handleResult = () => {
@@ -111,7 +107,6 @@ const handleResult = () => {
     display.value = calculator.displayValue;
     
     calculator.allowSecondOperand = false;
-    console.table(calculator)
 }
 
 const handleAllClear = () => {
@@ -123,8 +118,6 @@ const handleAllClear = () => {
     calculator.result               = null;
 
     display.value = calculator.displayValue;
-    console.table(calculator)
-
 }
 
 const handleDecimal = (dot) => {
@@ -134,8 +127,6 @@ const handleDecimal = (dot) => {
         calculator.displayValue     = displayValue + dot;
         display.value = calculator.displayValue;
     }
-    console.table(calculator)
-
 }
 
 const handleClear = () => {
@@ -147,8 +138,6 @@ const handleClear = () => {
     } else {
         display.value = '0'
     }
-    console.table(calculator)
-
 }
 
 const keys = document.getElementById('keys');
