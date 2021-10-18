@@ -72,7 +72,7 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap: 10px;
+    /* gap: 10px; */
 
 }
 
@@ -82,7 +82,9 @@ input {
     flex: 1;
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    /* gap: 10px; */
+    margin-bottom: 3px;
+
 }
 
 .key {
@@ -101,11 +103,12 @@ input {
 }
 
 .key0 {
-    flex: 2.7;
+    flex: 2.58;
 }
 
 button {
     border: none;
+    margin: 3px;
 }
 
 .operator, .result, .clear, .allClear {
