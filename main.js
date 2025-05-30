@@ -3,7 +3,7 @@ const subtract  = (x, y) => x - y;
 const multiply  = (x, y) => x * y;
 const divide    = (x, y) => x / y;
 const power     = (x, y) => x ** y;
-const square    = x => x * x;
+
 const operate   = (operator, x, y) => {
     switch (operator){
         case 'multiply':
@@ -33,7 +33,8 @@ const calculator = {
     result:             null,
 }
 
-const display = document.getElementById('display');
+const display = document.querySelector('#display');
+display.value = '0';
 
 const populateDisplay = (input) => {
     let { displayValue, result, allowSecondOperand } = calculator;
@@ -56,10 +57,8 @@ const populateDisplay = (input) => {
         calculator.displayValue = input;
         display.value = calculator.displayValue;
         calculator.secondOperand = null;
-
     } else {
         // Append digits as you press numbers
-     
         calculator.displayValue = displayValue + input;
         display.value = calculator.displayValue;
     }
@@ -72,9 +71,8 @@ const handleOperator = (operatorSign) => {
     if(displayValue != '0' && firstOperand == null){
         calculator.firstOperand = displayValue;
         calculator.displayValue = '0';
-        // When an operator is pressed after making a second input - the two entries
-        // are added back to the first operator
-    } else if (firstOperand != null && result == null){
+        // When an operator is pressed after making a second input 
+    } else if (firstOperand && !result){
         firstOperand = parseFloat(firstOperand);
         displayValue = parseFloat(displayValue);
 
