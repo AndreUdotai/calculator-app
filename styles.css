@@ -114,3 +114,7 @@ button {
 .operator, .result, .clear, .allClear {
     background-color: rgb(245, 230, 231);
 }
+
+.active {
+    border: 1px solid blue;
+}

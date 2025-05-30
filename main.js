@@ -94,8 +94,6 @@ const handleResult = () => {
         firstOperand = result;
     }
 
-    console.log(firstOperand, secondOperand, operator);
-
     // Ensure operands are valid before parsing
     firstOperand = parseFloat(firstOperand || "0"); // Default to 0 if undefined</span>*
     secondOperand = parseFloat(secondOperand || "0"); // Default to 0 if undefined</span>*
@@ -103,7 +101,7 @@ const handleResult = () => {
 
     // Check for division by zero before proceeding with calculation
     if (operator === 'divide' && secondOperand === 0) {
-        calculator.displayValue = "Error: Division by Zero";
+        calculator.displayValue = "Error! x/0";
         display.value = calculator.displayValue;
         calculator.allowSecondOperand = false;
         calculator.result = null; // Reset result to avoid carrying over invalid state
@@ -112,8 +110,6 @@ const handleResult = () => {
         calculator.operator = null; // Reset operator</span>*
         return; // Exit the function to prevent further calculation
     }
-
-    console.log(firstOperand, secondOperand, operator);
 
     // Perform the calculation if no error
     calculator.result = parseFloat(operate(operator, firstOperand, secondOperand).toFixed(7)).toString();
@@ -163,6 +159,10 @@ keys.addEventListener('click', (e) => {
         return;
     }
 
+    // Remove .active class from all keys, then add to the clicked key
+    document.querySelectorAll('.key').forEach(key => key.classList.remove('active'));
+    target.classList.add('active');
+
     if(target.classList.contains('numKey')){
         populateDisplay(target.value);
         return;
@@ -193,3 +193,4 @@ keys.addEventListener('click', (e) => {
         return;
     }
  })
+
