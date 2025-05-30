@@ -71,11 +71,10 @@ const handleOperator = (operatorSign) => {
     if(displayValue != '0' && firstOperand == null){
         calculator.firstOperand = displayValue;
         calculator.displayValue = '0';
-        // When an operator is pressed after making a second input 
+        // When an operator is pressed after making a second input
     } else if (firstOperand && !result){
         firstOperand = parseFloat(firstOperand);
         displayValue = parseFloat(displayValue);
-
         calculator.firstOperand = (parseFloat(operate(operator, firstOperand, displayValue).toFixed(7))).toString();
         calculator.displayValue = '0';
         display.value = calculator.firstOperand;
@@ -85,27 +84,45 @@ const handleOperator = (operatorSign) => {
 }
 
 const handleResult = () => {
-    let { allowSecondOperand, secondOperand, firstOperand, displayValue, operator, result} = calculator;
+    let { allowSecondOperand, secondOperand, firstOperand, displayValue, operator, result } = calculator;
+
     // Stores display value into 'secondOperand' variable 
-    if(displayValue !== '0' && allowSecondOperand){
+    if (displayValue !== '0' && allowSecondOperand) {
         calculator.secondOperand = displayValue;
         secondOperand = calculator.secondOperand;
-        // store the result in firstOperand (this covers for cases when a user continously presses
-        // the '=' sign when a calculation is completed.
-    } else if (typeof(result) === 'string'){
+    } else if (typeof result === 'string') {
         firstOperand = result;
     }
-    firstOperand = parseFloat(firstOperand);
-    secondOperand = parseFloat(secondOperand);
+
+    console.log(firstOperand, secondOperand, operator);
+
+    // Ensure operands are valid before parsing
+    firstOperand = parseFloat(firstOperand || "0"); // Default to 0 if undefined</span>*
+    secondOperand = parseFloat(secondOperand || "0"); // Default to 0 if undefined</span>*
     operator = calculator.operator;
 
-    calculator.result = (parseFloat(operate(operator, firstOperand, secondOperand).toFixed(7))).toString();
+    // Check for division by zero before proceeding with calculation
+    if (operator === 'divide' && secondOperand === 0) {
+        calculator.displayValue = "Error: Division by Zero";
+        display.value = calculator.displayValue;
+        calculator.allowSecondOperand = false;
+        calculator.result = null; // Reset result to avoid carrying over invalid state
+        calculator.firstOperand = null; // Reset firstOperand
+        calculator.secondOperand = null; // Reset secondOperand</span>*
+        calculator.operator = null; // Reset operator</span>*
+        return; // Exit the function to prevent further calculation
+    }
+
+    console.log(firstOperand, secondOperand, operator);
+
+    // Perform the calculation if no error
+    calculator.result = parseFloat(operate(operator, firstOperand, secondOperand).toFixed(7)).toString();
 
     calculator.displayValue = calculator.result;
     display.value = calculator.displayValue;
     
     calculator.allowSecondOperand = false;
-}
+};
 
 const handleAllClear = () => {
     calculator.displayValue         = '0';
@@ -122,7 +139,7 @@ const handleDecimal = (dot) => {
     let { displayValue } = calculator;
 
     if(!calculator.displayValue.includes(dot)){
-        calculator.displayValue     = displayValue + dot;
+        calculator.displayValue = displayValue + dot;
         display.value = calculator.displayValue;
     }
 }
@@ -130,7 +147,7 @@ const handleDecimal = (dot) => {
 const handleClear = () => {
     let { displayValue } = calculator;
 
-    calculator.displayValue = displayValue.substr(0, displayValue.length - 1);
+    calculator.displayValue = displayValue.slice(0, -1);
     if(displayValue.length > 1){
         display.value = calculator.displayValue;
     } else {
